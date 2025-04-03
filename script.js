@@ -3,34 +3,71 @@ window.addEventListener("load", function () {
     elemekElerese2();
     elemekElerese3();
     elemekElerese4();
+    esemenyformazas();
+    esemenykezeleles1();
+    esemenykezeleles2();
    
 });
 
 function elemekElerese1() {
-    const ELEM=document.querySelectorAll("section h2")[0]
-    ELEM.innerHTML ="Kiirt szöveg"
-    console.log(ELEM)
+    const ELEM1=document.querySelectorAll("section h2")[0]
+    ELEM1.innerHTML ="Kiirt szöveg"
+    console.log(ELEM1)
    
 }
 function elemekElerese2() {
     const ELEM2=document.querySelector("#ide")
     ELEM2.innerHTML ="<p>Jó reggelt!<p/>"
-   
-    
 }
+
 function elemekElerese3() {
-    const ELEM=document.querySelectorAll(".ide")[0]
-    ELEM.innerHTML="<p>Jó reggelt!<p/>"
-    
+    const ELEM3=document.querySelectorAll(".ide")[0]
+    ELEM3.innerHTML="<p>Jó reggelt!<p/>"
 }
+
 function elemekElerese4() {
-    const ELEM2=document.querySelector(".lista")
-    ELEM2.innerHTML +="<ol>"
+    const LISTAELEM=document.querySelector(".lista")
+    LISTAELEM.innerHTML +="<ol>"
     for (let index = 0; index < 5; index++) {
         let veletlenszam =Math.floor(Math.random()*41+10)
-        ELEM2.innerHTML +=`<li>${veletlenszam}</li>`
+        LISTAELEM.innerHTML +=`<li>${veletlenszam}</li>`
     }
-    ELEM2.innerHTML +="</ol>"
- 
+    LISTAELEM.innerHTML +="</ol>" 
+}
+
+ function esemenyformazas(){
+    const LISTAELEM=document.querySelector(".lista")
+    LISTAELEM.classList.add("formazott")
+}
+
+function esemenykezeleles1(){
+    const LISTAELEM=document.querySelector(".lista")
+    const FELADATELEM=document.querySelector(".kattintasutan")
+    LISTAELEM.addEventListener("click", ()=>{
+            FELADATELEM.innerHTML =LISTAELEM
+    })
+
+}
+
+function esemenykezeleles2(){
+    const GOMBELEM = document.querySelectorAll(".feladat")[0]
+    GOMBELEM.innerHTML = "<button id='feladat button'>OK</button>"
+    const OKGOMB = document.querySelectorAll(".feladat")[0]
+    OKGOMB.addEventListener("click",()=>{
+        GOMBELEM.innerHTML +="<img src='kep.webp' alt='kep'></img>"
+    })
     
 }
+function esemenykezeleles3(){
+    const GOMBELEM = document.querySelectorAll(".feladat")[0]
+    GOMBELEM.innerHTML = "<button id='feladat button'>OK</button>"
+    const OKGOMB = document.querySelectorAll(".feladat")[0]
+    OKGOMB.addEventListener("click",()=>{
+        GOMBELEM.innerHTML +="<img  id ='kep' src='kep.webp' alt='kep'></img>"
+        const KEP_ELEM = document.querySelector("#kep");
+        KEP_ELEM.addEventListener("mouseover",  ()=> {
+            GOMBELEM.innerHTML ="<img  id ='kepKicsi' src='kepKicsi.jpg' alt='kepKicsi'></img>"
+          
+        });
+      });
+    }
