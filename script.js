@@ -74,12 +74,15 @@ function esemenykezeleles3(){
       });
 }
 function esemeykezeles4() {
-    const TAROLOELEM = document.querySelector(".tarolo")
-    for (let i = 0; i < 5; i++) {
-        const FUNKCIOELEM = document.querySelectorAll(".elem") [i]
-        FUNKCIOELEM.addEventListener("click",()=>{
-            const KIIRELEM = document.querySelector(".eredmeny")
+    const TAROLOELEM = document.querySelectorAll(".tarolo > .elem")//listát add vissz le tudom kérdezi a hosszát
+    const MEGJELENITO_ELEM = document.querySelector(".megjelenito")
+    let kiv_Szam;
+    for (let i = 0; i < TAROLOELEM.length; i++) {
+        TAROLOELEM[i].addEventListener("click",()=>{
+            kiv_Szam =i+1
+            MEGJELENITO_ELEM.innerHTML=`${kiv_Szam}`
         })
+        
         
     }
     
