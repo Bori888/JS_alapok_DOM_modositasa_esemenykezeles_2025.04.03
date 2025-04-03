@@ -6,6 +6,8 @@ window.addEventListener("load", function () {
     esemenyformazas();
     esemenykezeleles1();
     esemenykezeleles2();
+    esemenykezeleles3();
+    esemeykezeles4();
    
 });
 
@@ -70,4 +72,15 @@ function esemenykezeleles3(){
           
         });
       });
+}
+function esemeykezeles4() {
+    const TAROLOELEM = document.querySelector(".tarolo")
+    for (let i = 0; i < 5; i++) {
+        const FUNKCIOELEM = document.querySelectorAll(".elem") [i]
+        FUNKCIOELEM.addEventListener("click",()=>{
+            const KIIRELEM = document.querySelector(".eredmeny")
+        })
+        
     }
+    
+}
